@@ -17,15 +17,38 @@ if(isset($_POST['emviar']) && !empty($_POST['email']) && !empty($_POST['senha'])
 
     $result = $conecxao->query($sql);
 
-    print_r($sql);
-       
-    print_r($result);
 
+    if(mysqli_num_rows($result) < 1)
+    {
+        print_r("sim");
+    }
+    else{
+        print_r("nao");
+    }
+
+    // print_r($sql);
+       
+    // print_r($result);
+}
+else
+{
+    header("Location: home.php");
+}
+
+//     if(mysqli_num_rows( $result) < 1) {
+        
+//           print_r("nao ");
+//     }else{
+//         print_r("esiste");
+//     }
    
-}else {
+// }else {
   
- header("Location: home.php");
- }
+//  header("Location: home.php");
+ 
+// }
+
+
 //     if(mysqli_num_rows( $result) < 1) {
         
 //        print_r("nao ");
